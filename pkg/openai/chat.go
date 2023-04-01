@@ -6,6 +6,8 @@ import (
 )
 
 const (
+	// 这里需要自己的azure openai部署模型 
+	// todo 放进配置文件里
 	chatApi = "gpt-35/completions"
 )
 
