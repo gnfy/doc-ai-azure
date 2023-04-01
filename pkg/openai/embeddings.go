@@ -1,12 +1,12 @@
 package openai
 
 import (
-	"document-ai/pkg/common"
+	"doc-ai-azure/pkg/common"
 	"encoding/json"
 )
 
 const (
-	embeddingsApi = "/embeddings"
+	embeddingsApi = "embedding-ada/embeddings"
 )
 const (
 	TextEmbeddingAda002 = "text-embedding-ada-002"
@@ -17,7 +17,7 @@ type EmbeddingRequest struct {
 	Model string `json:"model"`
 }
 
-// EmbeddingResponse is the response from a Create embeddings request.
+// embedding响应数据的结构体
 type EmbeddingResponse struct {
 	Object string      `json:"object"`
 	Data   []Embedding `json:"data"`
@@ -31,7 +31,7 @@ type Embedding struct {
 	Index     int       `json:"index"`
 }
 
-// SendEmbeddings returns an EmbeddingResponse
+// 获得embedding的数据
 func SendEmbeddings(request EmbeddingRequest) (embeddingResponse EmbeddingResponse, err error) {
 	var reqBytes []byte
 	reqBytes, err = json.Marshal(request)

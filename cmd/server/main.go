@@ -1,8 +1,8 @@
 package main
 
 import (
-	"document-ai/pkg/api"
-	"document-ai/pkg/common"
+	"doc-ai-azure/pkg/api"
+	"doc-ai-azure/pkg/common"
 	"fmt"
 )
 

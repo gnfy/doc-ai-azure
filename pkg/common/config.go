@@ -22,6 +22,8 @@ type Server struct {
 
 type OpenAi struct {
 	Key string `yaml:"key"`
+	Endpoint string `yaml:"endpoint"`
+	Apiversion string `yaml:"apiversion"`
 }
 
 type Qdrant struct {

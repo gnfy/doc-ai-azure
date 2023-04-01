@@ -2,7 +2,7 @@ package qdrant
 
 import (
 	"bytes"
-	"document-ai/pkg/common"
+	"doc-ai-azure/pkg/common"
 	"io"
 	"net/http"
 )

@@ -1,12 +1,12 @@
 package openai
 
 import (
-	"document-ai/pkg/common"
+	"doc-ai-azure/pkg/common"
 	"encoding/json"
 )
 
 const (
-	chatApi = "/chat/completions"
+	chatApi = "gpt-35/completions"
 )
 
 const (

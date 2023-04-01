@@ -1,9 +1,9 @@
 package api
 
 import (
-	"document-ai/pkg/common"
-	"document-ai/pkg/openai"
-	"document-ai/pkg/qdrant"
+	"doc-ai-azure/pkg/common"
+	"doc-ai-azure/pkg/openai"
+	"doc-ai-azure/pkg/qdrant"
 	"github.com/gin-gonic/gin"
 	"net/http"
 	"strconv"

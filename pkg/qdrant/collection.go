@@ -1,7 +1,7 @@
 package qdrant
 
 import (
-	"document-ai/pkg/common"
+	"doc-ai-azure/pkg/common"
 	"encoding/json"
 	"errors"
 	"net/http"

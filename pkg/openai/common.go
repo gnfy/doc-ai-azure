@@ -2,30 +2,26 @@ package openai
 
 import (
 	"bytes"
-	"document-ai/pkg/common"
+	"doc-ai-azure/pkg/common"
 	"io"
 	"net/http"
 )
 
-const (
-	Api = "https://api.openai.com/v1"
-)
-
-// Usage Represents the total token usage per request to OpenAI.
+// 用户花费token的数据
 type Usage struct {
-	PromptTokens     int `json:"prompt_tokens"`
-	CompletionTokens int `json:"completion_tokens"`
-	TotalTokens      int `json:"total_tokens"`
+	PromptTokens int `json:"prompt_tokens"`
+	TotalTokens int `json:"total_tokens"`
 }
 
-func Send(suffix string, reqBytes []byte) (body []byte, err error) {
-	req, err := http.NewRequest(http.MethodPost, Api+suffix, bytes.NewBuffer(reqBytes))
+func Send(modelType string, reqBytes []byte) (body []byte, err error) {
+	requrl := common.GlobalObject.OpenAi.Endpoint + "openai/deployments/" + modelType + "?api-version=" + common.GlobalObject.OpenAi.Apiversion  
+	req, err := http.NewRequest(http.MethodPost, requrl, bytes.NewBuffer(reqBytes))
 	if err != nil {
 		common.Logger.Error(err.Error())
 		return
 	}
 	req.Header.Set("Content-Type", "application/json")
-	req.Header.Set("Authorization", "Bearer "+common.GlobalObject.OpenAi.Key)
+	req.Header.Set("api-key", common.GlobalObject.OpenAi.Key)
 
 	client := &http.Client{}
 	resp, err := client.Do(req)

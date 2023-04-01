@@ -1,9 +1,6 @@
-# document-ai
+# doc-ai-azure
 
-如果您想直接使用，避免二次开发，可以查看下边这个库
-https://github.com/coderabbit214/bibliothecarius
-
-go基于向量数据库与GPT3.5的通用本地知识库方案(A universal local knowledge base solution based on vector database and GPT3.5)
+go基于向量数据库与Azure OpenAI的通用本地知识库方案(A universal local knowledge base solution based on vector database and Azure OpenAI)
 
 ## 流程
 
@@ -40,8 +37,9 @@ sequenceDiagram
 
 ```
 
-## 启动
-
+## 编译
+go mod tidy
+make bin_build 
 ### Docker
 
 #### config
@@ -53,6 +51,8 @@ server:
   port: 9999
 openai:
   key: xx
+  endpoint: xx
+  apiversion: 2022-12-01
 qdrant:
   host: http://qdrant:6333
   collection-name: test
@@ -91,4 +91,4 @@ http://127.0.0.1:9999/
 
 ## 其他
 
-参考：https://github.com/GanymedeNil/document.ai
+参考：https://github.com/coderabbit214/document-ai

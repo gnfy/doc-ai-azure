@@ -2,6 +2,8 @@ server:
   port: 9999
 openai:
   key: xx
+  endpoint: xx
+  apiversion: 2022-12-01
 qdrant:
   host: http://qdrant:6333
   collection-name: test

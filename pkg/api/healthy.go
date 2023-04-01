@@ -1,7 +1,7 @@
 package api
 
 import (
-	"document-ai/pkg/common"
+	"doc-ai-azure/pkg/common"
 	"github.com/gin-gonic/gin"
 	"net/http"
 )

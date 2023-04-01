@@ -7,7 +7,7 @@ services:
       - '6333:6333'
     image: qdrant/qdrant
 
-  documentai:
+  docai:
     build: .
     depends_on:
       - qdrant
