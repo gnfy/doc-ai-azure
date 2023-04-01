@@ -12,11 +12,8 @@ go基于向量数据库与Azure OpenAI的通用本地知识库方案(A universal
 
 ```mermaid
 sequenceDiagram
-    participant 用户
-    participant OpenAI embeddings模型
-    participant 向量数据库
-    用户->>+OpenAI embeddings模型: 上传数据
-    OpenAI embeddings模型->>+向量数据库: 存储向量
+    用户->>+Azure OpenAI embeddings模型: 上传数据
+    Azure OpenAI embeddings模型->>+向量数据库: 存储向量
 ```
 
 ### 用户提问流程
@@ -24,16 +21,12 @@ sequenceDiagram
 
 ```mermaid
 sequenceDiagram
-    participant 用户
-    participant embeddings计算
-    participant 向量数据库
-    participant ChatGPT
     用户->>+embeddings计算: 发出请求
     embeddings计算->>+向量数据库: 查询
     向量数据库-->>-embeddings计算: 返回查询结果
     embeddings计算-->>-用户: 返回向量值
-    用户->>+ChatGPT: 组装问题请求
-    ChatGPT-->>-用户: 返回答案
+    用户->>+Azure ChatGPT: 组装问题请求
+    Azure ChatGPT-->>-用户: 返回答案
 
 ```
 
