@@ -38,8 +38,10 @@ sequenceDiagram
 ```
 
 ## 编译
+```bash
 go mod tidy
 make bin_build 
+```
 ### Docker
 
 #### config
