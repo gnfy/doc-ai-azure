@@ -4,9 +4,10 @@ import (
 	"doc-ai-azure/pkg/common"
 	"doc-ai-azure/pkg/openai"
 	"doc-ai-azure/pkg/qdrant"
-	"github.com/gin-gonic/gin"
 	"net/http"
 	"strconv"
+
+	"github.com/gin-gonic/gin"
 )
 
 type Message struct {
@@ -16,7 +17,7 @@ type Message struct {
 
 func chat(c *gin.Context) {
 	var message Message
-	if err := c.Bind(&message); err != nil {
+	if err := c.BindJSON(&message); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
@@ -24,6 +25,7 @@ func chat(c *gin.Context) {
 	//计算向量
 	embeddingRequest := openai.EmbeddingRequest{
 		Input: message.Text,
+		// Model: openai.TextEmbeddingAda002,
 	}
 	response, err := openai.SendEmbeddings(embeddingRequest)
 	if err != nil {
@@ -87,6 +89,7 @@ func chat(c *gin.Context) {
 	messages = append(messages, assistant)
 	messages = append(messages, user)
 	chatCompletionRequest := openai.ChatCompletionRequest{
+		Model:    openai.Gpt3Dot5Turbo,
 		Messages: messages,
 	}
 	completionResponse, err := openai.SendChat(chatCompletionRequest)

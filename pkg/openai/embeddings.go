@@ -10,6 +10,9 @@ const (
 	// todo 放进配置文件里
 	embeddingsApi = "embedding-ada/embeddings"
 )
+const (
+	TextEmbeddingAda002 = "text-embedding-ada-002"
+)
 
 type EmbeddingRequest struct {
 	Input string `json:"input"`

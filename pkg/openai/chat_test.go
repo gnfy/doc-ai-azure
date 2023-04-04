@@ -22,8 +22,8 @@ func TestSendChat(t *testing.T) {
 				Model:     Gpt3Dot5Turbo,
 				Messages: []ChatCompletionMessage{
 					{
-						Role:    ChatMessageRoleUser,
-						Content: "Hello!",
+						Role:   ChatMessageRoleUser,
+						Prompt: "Hello!",
 					},
 				},
 			}},

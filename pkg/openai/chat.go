@@ -6,9 +6,13 @@ import (
 )
 
 const (
-	// 这里需要自己的azure openai部署模型 
+	// 这里需要自己的azure openai部署模型
 	// todo 放进配置文件里
-	chatApi = "gpt-35/completions"
+	chatApi = "gpt-35/chat/completions"
+)
+
+const (
+	Gpt3Dot5Turbo = "gpt-35-turbo"
 )
 
 // Chat message role defined by the OpenAI API.
@@ -20,6 +24,7 @@ const (
 
 // ChatCompletionRequest represents a request structure for chat completion API.
 type ChatCompletionRequest struct {
+	Model            string                  `json:"model"`
 	Messages         []ChatCompletionMessage `json:"messages"`
 	MaxTokens        int                     `json:"max_tokens,omitempty"`
 	Temperature      float32                 `json:"temperature,omitempty"`

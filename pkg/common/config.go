@@ -2,8 +2,9 @@ package common
 
 import (
 	"fmt"
-	"gopkg.in/yaml.v3"
 	"os"
+
+	"gopkg.in/yaml.v3"
 )
 
 // GlobalObj 全局参数
@@ -21,8 +22,8 @@ type Server struct {
 }
 
 type OpenAi struct {
-	Key string `yaml:"key"`
-	Endpoint string `yaml:"endpoint"`
+	Key        string `yaml:"key"`
+	Endpoint   string `yaml:"endpoint"`
 	Apiversion string `yaml:"apiversion"`
 }
 

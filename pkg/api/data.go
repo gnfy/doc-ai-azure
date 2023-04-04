@@ -24,6 +24,7 @@ func updateByJson(c *gin.Context) {
 	for _, v := range json {
 		embeddingRequest := openai.EmbeddingRequest{
 			Input: v["text"],
+			Model: openai.TextEmbeddingAda002,
 		}
 		response, err := openai.SendEmbeddings(embeddingRequest)
 		if err != nil {
