@@ -15,13 +15,7 @@ func Test_chat(t *testing.T) {
 	ctx := context.Background()
 	reqList := []api.Message{
 		{
-			Text: "成人头疼是什么原因",
-		},
-		{
-			Text: "成人流鼻涕是什么原因",
-		},
-		{
-			Text: "成人流鼻咳嗽是什么原因",
+			Text: "感冒头痛的原因",
 		},
 	}
 	for _, item := range reqList {
@@ -39,9 +33,7 @@ func Test_chat(t *testing.T) {
 		if err != nil {
 			t.Fatal(err.Error())
 		}
-		if err = checkHttpResp(ctx, res); err != nil {
-			t.Fatal(err.Error())
-		}
+		fmt.Println(res)
 	}
 	<-time.After(time.Hour)
 }

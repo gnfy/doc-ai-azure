@@ -9,10 +9,7 @@ const (
 	// 这里需要自己的azure openai部署模型
 	// todo 放进配置文件里
 	chatApi = "gpt-35/chat/completions"
-)
-
-const (
-	Gpt3Dot5Turbo = "gpt-35-turbo"
+	// chatApi = "gpt-35/completions"
 )
 
 // Chat message role defined by the OpenAI API.

@@ -5,3 +5,4 @@ log
 config/config.yaml
 data
 app
+pkg/test

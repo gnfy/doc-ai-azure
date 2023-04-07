@@ -89,7 +89,6 @@ func chat(c *gin.Context) {
 	messages = append(messages, assistant)
 	messages = append(messages, user)
 	chatCompletionRequest := openai.ChatCompletionRequest{
-		Model:    openai.Gpt3Dot5Turbo,
 		Messages: messages,
 	}
 	completionResponse, err := openai.SendChat(chatCompletionRequest)

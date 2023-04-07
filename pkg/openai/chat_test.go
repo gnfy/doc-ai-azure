@@ -19,11 +19,10 @@ func TestSendChat(t *testing.T) {
 			name: "1",
 			args: args{ChatCompletionRequest{
 				MaxTokens: 5,
-				Model:     Gpt3Dot5Turbo,
 				Messages: []ChatCompletionMessage{
 					{
-						Role:   ChatMessageRoleUser,
-						Prompt: "Hello!",
+						Role:    ChatMessageRoleUser,
+						Content: "Hello!",
 					},
 				},
 			}},
